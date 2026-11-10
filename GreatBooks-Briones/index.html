@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briones | My Literary Journey: A Great Books Digital Portfolio</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Briones | My Literary Journey">
+  <meta property="og:description" content="A Great Books Digital Portfolio by Hyrum Rey A. Briones">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --ink: #111111;
+      --paper: #f3f2ec;
+      --white: #ffffff;
+      --warm: #e8e5dd;
+      --muted: #77756f;
+      --line: #d7d4cb;
+      --shadow: 0 14px 35px rgba(32, 30, 25, 0.09);
+      --editorial-gold: #947a43;
+      --editorial-gold-light: #d3bb80;
+      --editorial-display: Georgia, "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: clip;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    :is(.nav-btn, summary, button):focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    nav :is(.nav-btn, button):focus-visible,
+    #p1 .home-hero button:focus-visible,
+    .card-alt :is(button, summary):focus-visible {
+      outline-color: var(--white);
+    }
+
+    .announcement {
+      min-height: 27px;
+      display: grid;
+      place-items: center;
+      background: #111;
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      min-height: 80px;
+      padding: 10px 6.5% 8px;
+      background: #171717;
+      border-bottom: 1px solid #333333;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(0.5rem, 2.2vw, 2.2rem);
+      flex: 1;
+      min-width: 0;
+      list-style: none;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #ecc98b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      cursor: pointer;
+    }
+
+    .nav-brand img {
+      display: block;
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+    }
+
+    .nav-btn {
+      border: 0;
+      background: none;
+      color: #cfcfcf;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.15px;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0.55rem 0.3rem;
+      border-bottom: 1px solid transparent;
+      transition: color 180ms ease, border-color 180ms ease;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px 72px;
+    }
+
+    .page {
+      display: none;
+      animation: reveal 450ms ease both;
+    }
+
+    .page.active { display: block; }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .banner {
+      min-height: 235px;
+      display: grid;
+      align-content: end;
+      margin: 28px 0 32px;
+      padding: clamp(28px, 5vw, 68px);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 56%, rgba(255,255,255,.08) 100%),
+        repeating-linear-gradient(115deg, #c8c5bc 0 1px, #f7f6f2 1px 7px);
+      border: 1px solid #dedbd3;
+    }
+
+    .banner h1 {
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.15rem, 5vw, 5.2rem);
+      line-height: 1;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
+    }
+
+    .hero-banner {
+      min-height: 520px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      align-items: end;
+      gap: 28px;
+    }
+
+    .hero-copy { align-self: end; }
+
+    .hero-kicker {
+      display: block;
+      margin-bottom: 18px;
+      color: #444;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .hero-image-slot {
+      height: 430px;
+      display: block;
+      overflow: hidden;
+      border: 1px solid #bbb8af;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.92)),
+        repeating-linear-gradient(70deg, #d8d5cc 0 1px, #efede7 1px 9px);
+    }
+
+    .hero-image-slot img,
+    .hero-image-slot video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card,
+    .card-alt {
+      background: var(--white);
+      border: 1px solid #e2dfd7;
+      padding: clamp(22px, 3vw, 38px);
+      box-shadow: 0 1px 0 rgba(17,17,17,.02);
+    }
+
+    .card-alt { background: #181818; color: var(--white); }
+
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      line-height: 1.05;
+      margin-bottom: 1.1rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.55rem;
+    }
+
+    p {
+      color: #5f5d57;
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .card-alt p { color: #bdbdbd; }
+    strong { color: var(--ink); }
+
+    ul { color: #5f5d57; margin: 0 0 0 1.15rem; }
+    li { margin-bottom: 0.55rem; font-size: 0.95rem; }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 1.1rem;
+      color: #555;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    details {
+      margin-top: 1.35rem;
+      border-top: 1px solid var(--line);
+    }
+
+    summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      min-height: 48px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    details[open] summary::after { content: '−'; }
+
+    .essay p,
+    details p {
+      color: #222;
+      font-size: 1rem;
+      line-height: 1.75;
+      padding: 18px 0 2px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .grid-analyses { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .page > h2 { margin: 28px 0 14px; }
+
+    #p2 .banner,
+    #p3 .banner,
+    #p4 .banner,
+    #p5 .banner {
+      margin: 18px 0 30px;
+    }
+
+    #p2 .grid-2,
+    #p3 .grid-2,
+    #p4 .grid-2,
+    #p5 .grid-2,
+    #p2 .grid-3,
+    #p3 .grid-3,
+    #p4 .grid-3,
+    #p5 .grid-3 {
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      max-width: 560px;
+      color: #555;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .sources {
+      margin-top: 18px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .sources h2 { font-size: 1.25rem; }
+
+    .sources h3 {
+      margin: 1.6rem 0 0.4rem;
+      color: #555555;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    .sources ul, .sources p { margin-top: 0.75rem; }
+
+    .img-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 460px;
+      overflow: hidden;
+      margin: 28px 0 18px;
+      background: var(--warm);
+      border: 1px solid var(--line);
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .img-placeholder img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+
+    #p3 .banner {
+      position: relative;
+      margin: 24px 0 26px;
+      padding: clamp(28px, 5vw, 64px);
+      background:
+        linear-gradient(90deg, rgba(18, 17, 15, 0.96) 0%, rgba(18, 17, 15, 0.82) 46%, rgba(255, 255, 255, 0.12) 100%),
+        repeating-linear-gradient(120deg, rgba(186, 164, 105, 0.14) 0 2px, rgba(255, 255, 255, 0.03) 2px 10px);
+      border: 1px solid rgba(191, 165, 96, 0.42);
+      box-shadow: 0 14px 30px rgba(18, 17, 15, 0.12);
+    }
+
+    #p3 .banner h1 {
+      max-width: 760px;
+      color: #fbf9f3;
+      text-shadow: 0 2px 18px rgba(17, 17, 17, 0.16);
+    }
+
+    #p3 .banner .quote {
+      margin-top: 14px;
+      max-width: 640px;
+      color: #e9d8a9;
+      font-size: 0.97rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    #p3 .grid-2 {
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    #p3 .card {
+      padding: clamp(24px, 3vw, 34px);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(111, 92, 52, 0.14);
+      box-shadow: 0 10px 24px rgba(19, 17, 13, 0.06);
+    }
+
+    #p3 .card h2,
+    #p3 .card h3 {
+      color: #1b1814;
+    }
+
+    #p3 .card h3 {
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(191, 165, 96, 0.32);
+    }
+
+    #p3 .card p {
+      line-height: 1.8;
+      max-width: 72ch;
+    }
+
+    #p3 .img-placeholder {
+      margin: 0 0 22px;
+      height: clamp(300px, 37vw, 560px);
+      background: linear-gradient(180deg, #efe7d8 0%, #e2d7b5 100%);
+      border: 1px solid rgba(111, 92, 52, 0.18);
+      box-shadow: 0 14px 24px rgba(19, 17, 13, 0.06);
+    }
+
+    #p3 .img-placeholder img {
+      object-fit: contain;
+      object-position: center;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    @media (max-width: 780px) {
+      #p3 .banner {
+        min-height: 200px;
+      }
+
+      #p3 .banner h1 {
+        font-size: clamp(2rem, 7vw, 3.3rem);
+      }
+
+      #p3 .banner .quote {
+        font-size: 0.9rem;
+      }
+
+      #p3 .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      #p3 .card {
+        padding: 22px 20px;
+      }
+
+      #p3 .img-placeholder {
+        height: clamp(260px, 58vw, 420px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #p3 .banner,
+      #p3 .card,
+      #p3 .img-placeholder {
+        transition: none;
+      }
+    }
+
+    #p4 .learning-editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 40px;
+      margin-bottom: 0;
+    }
+
+    #p4 .learning-entry {
+      min-width: 0;
+      padding: 24px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    #p4 .learning-entry--lead { grid-column: span 7; }
+    #p4 .learning-entry--dark { grid-column: span 5; }
+    #p4 .learning-entry--compact { grid-column: span 5; }
+    #p4 .learning-entry--close { grid-column: span 7; }
+
+    #p4 .learning-entry--lead,
+    #p4 .learning-entry--compact {
+      background: var(--warm);
+    }
+
+    #p4 .learning-entry--dark {
+      border-top-color: var(--editorial-gold);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    #p4 .learning-entry-number {
+      display: block;
+      margin-bottom: 24px;
+      color: var(--editorial-gold);
+      font-family: var(--editorial-display);
+      font-size: clamp(3.25rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      font-variant-numeric: lining-nums;
+    }
+
+    #p4 .learning-entry--dark .learning-entry-number {
+      color: var(--editorial-gold-light);
+    }
+
+    #p4 .learning-entry h2 {
+      max-width: 18ch;
+      margin-bottom: 1rem;
+      color: inherit;
+      font-size: clamp(1.7rem, 2.4vw, 2.25rem);
+      line-height: 1.08;
+      overflow-wrap: break-word;
+      text-wrap: balance;
+    }
+
+    #p4 .learning-entry p {
+      max-width: 65ch;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    #p4 .learning-entry--dark p {
+      color: var(--paper);
+    }
+
+    #p4 .learning-entry--close {
+      position: relative;
+    }
+
+    #p4 .learning-entry--close::before {
+      content: "";
+      position: absolute;
+      top: 24px;
+      bottom: 24px;
+      left: 0;
+      width: 2px;
+      background: var(--editorial-gold);
+    }
+
+    #p4 .learning-entry--lead {
+      position: relative;
+    }
+
+    #p4 .learning-botanical {
+      position: absolute;
+      right: 20px;
+      bottom: 18px;
+      width: 138px;
+      height: auto;
+      display: block;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      object-fit: contain;
+      opacity: 0.28;
+      pointer-events: none;
+    }
+
+    #p4 .learning-entry p {
+      max-width: 70ch;
+      font-size: 1.025rem;
+      line-height: 1.82;
+    }
+
+    @media (max-width: 1000px) {
+      #p4 .learning-editorial-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      #p4 .learning-entry--lead,
+      #p4 .learning-entry--dark,
+      #p4 .learning-entry--compact,
+      #p4 .learning-entry--close {
+        grid-column: 1;
+      }
+
+      #p4 .learning-entry {
+        padding: 24px 20px;
+      }
+
+      #p4 .learning-entry p {
+        max-width: 65ch;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      #p4 .learning-entry-number {
+        margin-bottom: 16px;
+        font-size: clamp(3rem, 14vw, 4.25rem);
+      }
+
+      #p4 .learning-botanical {
+        position: static;
+        display: block;
+        margin: 8px 0 0 auto;
+        width: 82px;
+        height: auto;
+      }
+    }
+
+    #p5 .reflection-banner {
+      min-height: 285px;
+      align-content: center;
+      margin-bottom: 48px;
+      border-color: #d8d1c1;
+      background:
+        linear-gradient(105deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.84) 64%, rgba(255,255,255,.25) 100%),
+        repeating-linear-gradient(115deg, #d2cbbd 0 1px, #f7f5ef 1px 8px);
+    }
+
+    #p5 .reflection-banner h1 {
+      max-width: 900px;
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      text-transform: none;
+    }
+
+    #p5 .reflection-intro {
+      max-width: 500px;
+      margin: 20px 0 0;
+      color: #625e54;
+      font-family: var(--editorial-display);
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      line-height: 1.55;
+    }
+
+    #p5 .reflection-timeline {
+      position: relative;
+      display: grid;
+      gap: 0;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      counter-reset: reflection;
+    }
+
+    #p5 .reflection-timeline::before {
+      position: absolute;
+      top: 22px;
+      bottom: 86px;
+      left: 23px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--editorial-gold-light), var(--editorial-gold), var(--editorial-gold-light));
+      content: "";
+    }
+
+    #p5 .reflection-entry {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      column-gap: 24px;
+      margin: 0;
+      padding: 28px 0 34px;
+      border-bottom: 1px solid var(--line);
+      counter-increment: reflection;
+    }
+
+    @media (min-width: 900px) {
+      #p5 .reflection-entry::after {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        z-index: 0;
+        color: rgba(148, 122, 67, 0.14);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(110px, 14vw, 190px);
+        font-style: italic;
+        line-height: 1;
+        pointer-events: none;
+        transform: translateY(-50%);
+      }
+
+      #p5 .reflection-entry:nth-child(1)::after { content: "I"; }
+      #p5 .reflection-entry:nth-child(2)::after { content: "II"; }
+      #p5 .reflection-entry:nth-child(3)::after { content: "III"; }
+      #p5 .reflection-entry:nth-child(4)::after { content: "IV"; }
+      #p5 .reflection-entry:nth-child(5)::after { content: "V"; }
+    }
+
+    #p5 .reflection-entry:first-child {
+      padding-top: 0;
+    }
+
+    #p5 .reflection-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    #p5 .reflection-marker {
+      z-index: 1;
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid var(--editorial-gold);
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--editorial-gold);
+      font-family: var(--editorial-display);
+      font-size: 1rem;
+      font-variant-numeric: lining-nums;
+    }
+
+    #p5 .reflection-question {
+      max-width: 34ch;
+      margin: 2px 0 16px;
+      color: var(--ink);
+      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+      line-height: 1.25;
+      text-wrap: pretty;
+    }
+
+    #p5 .reflection-question-prefix {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
+
+    #p5 .reflection-answer {
+      max-width: 62ch;
+      margin: 0;
+      color: #3d3b37;
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    #p5 .reflection-answer::first-letter {
+      float: left;
+      padding-top: 4px;
+      padding-right: 6px;
+      color: var(--editorial-gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.4em;
+      line-height: 0.78;
+    }
+
+    #p5 .reflection-entry--closing {
+      padding-bottom: 24px;
+      border-bottom: 0;
+    }
+
+    #p5 .reflection-entry--closing .reflection-content {
+      position: relative;
+      z-index: 1;
+      max-width: 70ch;
+      padding: 42px 38px 40px;
+      border: 1px solid var(--editorial-gold);
+      background: #171717;
+    }
+
+    #p5 .reflection-entry--closing .reflection-content::before {
+      position: absolute;
+      inset: 6px;
+      border: 1px solid var(--editorial-gold);
+      content: "";
+      pointer-events: none;
+    }
+
+    #p5 .reflection-entry--closing .reflection-question {
+      max-width: 38ch;
+      color: var(--white);
+    }
+
+    #p5 .reflection-entry--closing .reflection-answer {
+      color: #d9d6cf;
+    }
+
+    #p5 .reflection-entry--closing .reflection-answer::first-letter {
+      color: var(--editorial-gold-light);
+    }
+
+    #p5 .reflection-endmark {
+      display: grid;
+      grid-template-columns: 48px max-content 48px;
+      grid-template-rows: 18px auto;
+      justify-content: center;
+      align-items: center;
+      column-gap: 16px;
+      row-gap: 12px;
+      margin: 22px 0 0;
+      color: #806832;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    #p5 .reflection-endmark::before,
+    #p5 .reflection-endmark::after {
+      grid-row: 2;
+      height: 1px;
+      background: var(--editorial-gold);
+      content: "";
+    }
+
+    #p5 .reflection-endmark::before { grid-column: 1; }
+    #p5 .reflection-endmark::after { grid-column: 3; }
+
+    #p5 .reflection-endmark-ornament {
+      position: relative;
+      grid-column: 2;
+      grid-row: 1;
+      width: 22px;
+      height: 18px;
+      justify-self: center;
+    }
+
+    #p5 .reflection-endmark-ornament::before,
+    #p5 .reflection-endmark-ornament::after {
+      position: absolute;
+      top: 2px;
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--editorial-gold);
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    #p5 .reflection-endmark-ornament::before { left: 0; }
+    #p5 .reflection-endmark-ornament::after { left: 4px; }
+
+    #p5 .reflection-endmark-label {
+      grid-column: 2;
+      grid-row: 2;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 700px) {
+      #p5 .reflection-banner {
+        min-height: 220px;
+        margin-bottom: 34px;
+        padding: 28px 22px;
+      }
+
+      #p5 .reflection-banner h1 {
+        font-size: clamp(2.25rem, 10vw, 3.6rem);
+      }
+
+      #p5 .reflection-intro {
+        margin-top: 14px;
+      }
+
+      #p5 .reflection-timeline::before {
+        left: 17px;
+        bottom: 70px;
+      }
+
+      #p5 .reflection-entry {
+        grid-template-columns: 36px minmax(0, 1fr);
+        column-gap: 16px;
+        padding: 24px 0 28px;
+      }
+
+      #p5 .reflection-entry:first-child {
+        padding-top: 0;
+      }
+
+      #p5 .reflection-marker {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+      }
+
+      #p5 .reflection-question {
+        margin: 1px 0 12px;
+      }
+
+      #p5 .reflection-answer {
+        max-width: 62ch;
+      }
+
+      #p5 .reflection-answer::first-letter {
+        font-size: 2.6em;
+      }
+
+      #p5 .reflection-entry--closing .reflection-content {
+        padding: 28px 18px 26px;
+      }
+
+      #p5 .reflection-endmark {
+        column-gap: 10px;
+      }
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    body:has(#p1.active) .container {
+      max-width: none;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #p1 .home-section { width: 100%; }
+
+    #p1 .home-hero {
+      min-height: 430px;
+      padding: 28px clamp(24px, 6vw, 88px) 42px;
+      background:
+        linear-gradient(135deg, rgba(17,17,17,0.98), rgba(17,17,17,0.92)),
+        radial-gradient(circle at top left, rgba(236,201,139,0.12), transparent 52%);
+      color: #ffffff;
+      border-top: 1px solid rgba(236, 201, 139, 0.18);
+      border-bottom: 1px solid rgba(236, 201, 139, 0.12);
+    }
+
+    #p1 .home-hero-inner,
+    #p1 .quote-inner,
+    #p1 .about-inner {
+      width: min(100%, 1240px);
+      margin: 0 auto;
+    }
+
+    #p1 .home-hero-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 56px);
+      align-items: center;
+      min-height: 420px;
+    }
+
+    #p1 .home-hero-photo {
+      width: 100%;
+      height: 390px;
+      overflow: hidden;
+      background: #292929;
+      border: 1px solid rgba(236, 201, 139, 0.24);
+      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    #p1 .home-hero-photo img,
+    #p1 .home-hero-photo video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    #p1 .home-hero-photo img {
+      filter: grayscale(100%) brightness(1.9) contrast(1.1);
+    }
+
+    #p1 .about-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(100%) contrast(1.06) brightness(0.98);
+    }
+
+    #p1 .home-title {
+      position: relative;
+      align-self: center;
+      max-width: 560px;
+      padding-bottom: 0;
+    }
+
+    #p1 .home-title::before {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 2px;
+      margin-bottom: 18px;
+      background: rgba(236, 201, 139, 0.9);
+    }
+
+    #p1 .home-title h1,
+    #p1 .about-copy h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    #p1 .home-title h1 {
+      color: #ffffff;
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 0.96;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      margin-bottom: 18px;
+      letter-spacing: -0.05em;
+    }
+
+    #p1 .home-title p {
+      max-width: 500px;
+      color: #d9d9d9;
+      font-size: 1.04rem;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 820px) {
+      #p1 .home-hero {
+        padding: 22px 20px 30px;
+      }
+
+      #p1 .home-hero-content {
+        grid-template-columns: 1fr;
+        align-items: center;
+        min-height: auto;
+      }
+
+      #p1 .home-hero-photo {
+        width: min(100%, 480px);
+        height: 320px;
+        margin: 0 auto;
+      }
+
+      #p1 .home-title {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #p1 .home-hero {
+        min-height: auto;
+        padding: 18px 18px 26px;
+      }
+
+      #p1 .home-hero-photo {
+        height: 280px;
+      }
+
+      #p1 .home-title h1 {
+        font-size: clamp(2.1rem, 12vw, 3.3rem);
+      }
+
+      #p1 .home-title p {
+        font-size: 0.96rem;
+      }
+    }
+
+    #p1 .quote-section {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      padding: clamp(40px, 6vw, 72px) 24px;
+      background: linear-gradient(180deg, #f7f5f0 0%, #f1efe9 100%);
+      border-top: 1px solid rgba(17, 17, 17, 0.08);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      text-align: center;
+    }
+
+    #p1 .quote-inner {
+      width: min(100%, 820px);
+      display: grid;
+      gap: 0;
+    }
+
+    #p1 .book-cover-wrap {
+      position: relative;
+      width: 98px;
+      height: 98px;
+      margin: 0 auto 20px;
+      background: #ffffff;
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      border-radius: 50%;
+      box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+    }
+
+    #p1 .book-cover {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    #p1 .quote-mark {
+      position: absolute;
+      right: -2px;
+      bottom: -2px;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #ecc98b;
+      color: #111111;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      line-height: 1;
+      box-shadow: 0 8px 16px rgba(17, 17, 17, 0.12);
+    }
+
+    #p1 .quote-copy {
+      max-width: 700px;
+      margin: 0 auto 10px;
+      color: #1d1d1d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.1rem, 2vw, 2rem);
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+      font-style: italic;
+    }
+
+    #p1 .quote-credit {
+      margin: 0;
+      color: #555555;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      #p1 .quote-section {
+        padding: 32px 18px;
+      }
+
+      #p1 .book-cover-wrap {
+        width: 86px;
+        height: 86px;
+        margin-bottom: 16px;
+      }
+
+      #p1 .quote-copy {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+      }
+
+      #p1 .quote-credit {
+        font-size: 11px;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    #p1 .about-section {
+      padding: clamp(42px, 7vw, 88px) clamp(24px, 6vw, 88px);
+      background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 100%);
+      border-top: 1px solid rgba(17, 17, 17, 0.06);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+    }
+
+    #p1 .about-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.82fr);
+      gap: clamp(32px, 6vw, 96px);
+      align-items: center;
+    }
+
+    #p1 .about-copy {
+      max-width: 610px;
+    }
+
+    #p1 .about-label {
+      display: block;
+      margin-bottom: 16px;
+      color: #555555;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    #p1 .about-copy h2 {
+      margin-bottom: 14px;
+      color: #111111;
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      line-height: 0.96;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+    }
+
+    #p1 .about-subtitle {
+      color: #444444;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    #p1 .about-description,
+    #p1 .about-item p {
+      color: #444444;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    #p1 .about-description {
+      max-width: 58ch;
+    }
+
+    #p1 .about-items {
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 18px;
+    }
+
+    #p1 .about-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding-top: 18px;
+      border-top: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    #p1 .about-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    #p1 .about-item svg {
+      width: 22px;
+      height: 22px;
+      margin-top: 4px;
+      fill: none;
+      stroke: #c9a96d;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.4;
+    }
+
+    #p1 .about-item h3 {
+      margin-bottom: 4px;
+      color: #111111;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    #p1 .about-item p { margin: 0; }
+
+    #p1 .about-copy .analyses-link {
+      display: inline-block;
+      margin-top: 8px;
+      border: 1px solid rgba(236, 201, 139, 0.7);
+      background: transparent;
+      color: #111111;
+      box-shadow: inset 0 0 0 1px transparent;
+    }
+
+    #p1 .about-copy .analyses-link:hover,
+    #p1 .about-copy .analyses-link:focus-visible {
+      background: #ecc98b;
+      border-color: #ecc98b;
+      color: #111111;
+      box-shadow: 0 10px 18px rgba(236, 201, 139, 0.18);
+    }
+
+    #p1 .analyses-link {
+      display: inline-block;
+      border: 0;
+      padding: 13px 22px;
+      background: #111111;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    #p1 .analyses-link:hover,
+    #p1 .analyses-link:focus-visible {
+      background: #333333;
+    }
+
+    #p1 .hero-analyses-link {
+      border: 1px solid rgba(236, 201, 139, 0.6);
+      background: transparent;
+      color: var(--white);
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      box-shadow: inset 0 0 0 1px transparent;
+    }
+
+    #p1 .hero-analyses-link:hover,
+    #p1 .hero-analyses-link:focus-visible {
+      background: #ecc98b;
+      border-color: #ecc98b;
+      color: #111111;
+      box-shadow: 0 10px 18px rgba(236, 201, 139, 0.18);
+    }
+
+    #p1 .hero-analyses-link:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 3px;
+    }
+
+    #p1 .hero-analyses-link:active {
+      transform: translateY(1px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #p1 .hero-analyses-link,
+      #p1 .about-copy .analyses-link {
+        transition: none;
+        transform: none;
+      }
+    }
+
+    #p1 .about-photo {
+      position: relative;
+      height: 510px;
+      overflow: hidden;
+      background: #e5e3dd;
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      box-shadow: 0 20px 36px rgba(17, 17, 17, 0.08);
+    }
+
+    #p1 .about-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(236, 201, 139, 0.25);
+      pointer-events: none;
+    }
+
+    @media (max-width: 820px) {
+      #p1 .about-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      #p1 .about-copy {
+        order: 1;
+        max-width: 100%;
+      }
+
+      #p1 .about-photo {
+        order: 2;
+        width: min(100%, 440px);
+        height: 420px;
+        margin: 0 auto;
+      }
+    }
+
+    #p1 .legacy-profile-details {
+      max-width: 1180px;
+      margin: 24px auto 0;
+      padding: 0 0 2px;
+      border: 0;
+    }
+
+    #p1 .legacy-profile-details > summary {
+      justify-content: center;
+      color: #555555;
+      border-top: 1px solid #d7d4cb;
+      border-bottom: 1px solid #d7d4cb;
+    }
+
+    #p1 .legacy-profile-details > summary::after {
+      margin-left: 12px;
+    }
+
+    #p1 .legacy-profile-details .grid-2 {
+      margin-top: 18px;
+    }
+
+    /* ---- Page 2: Lessons We Learned (Group Discussion) ---- */
+    .lesson-card .who {
+      margin-bottom: 0.4rem;
+      color: #444444;
+    }
+
+    .lesson {
+      margin-top: 1.1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .lesson-label {
+      margin-bottom: 0.3rem;
+      color: #111111;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .lesson p:last-child { margin-bottom: 0; }
+    .lesson strong { color: var(--ink); }
+
+    .lessons-instruction {
+      margin: 0 0 12px;
+    }
+
+    .lessons-grid {
+      align-items: start;
+    }
+
+    .lesson-flip {
+      perspective: 1200px;
+      align-self: start;
+      cursor: pointer;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(236, 201, 139, 0.28);
+      background: #171717;
+      box-shadow: 0 12px 22px rgba(17, 17, 17, 0.08);
+      transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+    }
+
+    .lesson-flip:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .lesson-flip-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .lesson-flip.is-flipped .lesson-flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .lesson-face {
+      grid-area: 1 / 1;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .lesson-front {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 14px;
+      border: 1px solid rgba(236, 201, 139, 0.22);
+      background: #171717;
+      color: #fff;
+    }
+
+    .lesson-cover-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border: 1px solid rgba(236, 201, 139, 0.18);
+      border-radius: 12px;
+    }
+
+    .lesson-cover-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: #171717;
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .lesson-front.cover-missing .lesson-cover-fallback {
+      display: grid;
+    }
+
+    .lesson-front.cover-missing .lesson-cover-caption {
+      display: none;
+    }
+
+    .lesson-cover-badge,
+    .lesson-cover-caption {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .lesson-cover-badge {
+      align-self: flex-start;
+      padding: 5px 8px;
+      background: rgba(17, 17, 17, 0.8);
+      border: 1px solid rgba(236, 201, 139, 0.4);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .lesson-cover-caption {
+      margin: 0 -14px -14px;
+      padding: 12px 14px;
+      border-top: 1px solid rgba(236, 201, 139, 0.45);
+      background: linear-gradient(180deg, rgba(17,17,17,0.28), rgba(17,17,17,0.9));
+    }
+
+    .lesson-cover-caption h3 {
+      margin: 0;
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+    }
+
+    .lesson-cover-hint {
+      display: block;
+      margin-top: 5px;
+      color: #d0d0d0;
+      font-size: 11px;
+    }
+
+    .lesson-back {
+      transform: rotateY(180deg);
+      border: 1px solid rgba(236, 201, 139, 0.24);
+      background: #f8f7f4;
+      box-shadow: inset 0 0 0 1px rgba(17, 17, 17, 0.02);
+    }
+
+/* ---- Page 2: Special Activities (merge into the main <style> block later) ---- */
+        .qa {
+          padding-top: 18px;
+          border-top: 1px dashed var(--line);
+        }
+        .qa h4 {
+          margin: 1.3rem 0 0.35rem;
+          color: #111111;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 1.05rem;
+          font-weight: 400;
+          line-height: 1.35;
+        }
+        .qa h4:first-child { margin-top: 0; }
+        .qa p {
+          margin: 0 0 0.7rem;
+          padding: 0;
+          border-top: 0;
+        }
+        .qa .lens-name {
+          margin: 1.6rem 0 0.2rem;
+          color: #555555;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1.4px;
+          text-transform: uppercase;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+      .lesson-flip-inner {
+        transform: none !important;
+        transition: none;
+      }
+
+      .lesson-back {
+        transform: none;
+      }
+
+      .lesson-flip.is-flipped .lesson-front,
+      .lesson-flip:not(.is-flipped) .lesson-back {
+        visibility: hidden;
+      }
+    }
+
+    .overall { margin-top: 18px; }
+
+    .overall ol {
+      margin: 0 0 0 1.25rem;
+      color: #e6e6e6;
+    }
+
+    .overall li {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .overall li:last-child { margin-bottom: 0; }
+
+    /* ---- Pop-ups and hover feedback ---- */
+    .activity-card, .sources-launch { position: relative; }
+    .activity-open { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 48px; margin-top: 1.35rem; padding: 0; border: 0; border-top: 1px solid var(--line); background: none; color: var(--ink); font: inherit; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; text-align: left; cursor: pointer; }
+    .activity-open .arrow { width: 26px; height: 26px; display: grid; place-items: center; background: var(--ink); color: #fff; font-size: 15px; font-weight: 400; letter-spacing: 0; transition: transform 200ms ease, background 200ms ease; }
+    .activity-open::before, .sources-open::before { content: ""; position: absolute; inset: 0; }
+    .activity-card:has(.activity-open:focus-visible), .sources-launch:has(.sources-open:focus-visible) { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .sources-launch { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 18px; padding: clamp(22px, 3vw, 32px); background: #fff; border: 1px solid var(--line); }
+    .sources-launch h2 { margin-bottom: 0.35rem; font-size: 1.25rem; }
+    .sources-launch p { margin: 0; }
+    .sources-open { flex: 0 0 auto; padding: 13px 22px; border: 0; background: #111; color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 200ms ease; }
+
+    .modal { width: min(860px, calc(100vw - 32px)); max-width: none; max-height: none; margin: auto; padding: 0; border: 0; background: transparent; color: var(--ink); overflow: visible; }
+    .modal::backdrop { background: rgba(17, 17, 17, 0.72); backdrop-filter: blur(6px); }
+    .modal[open] { animation: modal-in 260ms ease both; }
+    .modal[open]::backdrop { animation: backdrop-in 260ms ease both; }
+    @keyframes modal-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } to { opacity: 1; transform: none; } }
+    @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+    .modal-shell { display: flex; flex-direction: column; max-height: 88vh; max-height: 88dvh; background: var(--white); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
+    .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px clamp(20px, 4vw, 40px); background: #171717; border-bottom: 3px solid #ecc98b; }
+    .modal-kicker { display: block; margin-bottom: 6px; color: #ecc98b; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .modal-title { margin: 0; color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.1; }
+    .modal-sub { margin: 6px 0 0; color: #bdbdbd; font-size: 0.9rem; font-style: italic; }
+    .modal-close { flex: 0 0 auto; width: 40px; height: 40px; border: 1px solid #555; background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; transition: background 200ms ease, color 200ms ease, transform 200ms ease; }
+    .modal-close:focus-visible { outline: 2px solid #ecc98b; outline-offset: 3px; }
+    .modal-body { overflow-y: auto; overscroll-behavior: contain; padding: clamp(20px, 4vw, 40px); }
+    .modal-body .qa { border-top: 0; padding-top: 0; }
+    .modal .sources { margin-top: 0; border: 0; }
+    .modal-body.sources > h3:first-child { margin-top: 0; }
+    body:has(dialog[open]) { overflow: hidden; }
+
+    @media (hover: hover) {
+      .activity-card, .sources-launch, .lesson-flip { transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease; }
+      .activity-card:hover, .sources-launch:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--ink); }
+      .lesson-flip:hover { transform: translateY(-4px); border-color: rgba(236, 201, 139, 0.46); box-shadow: 0 18px 26px rgba(17, 17, 17, 0.12); }
+      .activity-card:hover .arrow { transform: translateX(4px); background: #333; }
+      .sources-launch:hover .sources-open { background: #333; }
+      .modal-close:hover { background: #ecc98b; border-color: #ecc98b; color: #111; transform: rotate(90deg); }
+      summary:hover::after { background: #333; }
+      .nav-brand:hover { opacity: 0.85; }
+    }
+
+    @media (max-width: 620px) {
+      .sources-launch { flex-direction: column; align-items: flex-start; }
+      .modal { width: calc(100vw - 20px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .modal[open], .modal[open]::backdrop { animation: none; }
+      .activity-card, .sources-launch, .lesson-flip, .modal-close { transition: none; }
+      .activity-card:hover, .sources-launch:hover, .lesson-flip:hover, .modal-close:hover { transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      nav { min-height: 80px; padding: 10px 12px; gap: 1rem; }
+      .nav-links {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0.55rem;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-btn { white-space: nowrap; padding-inline: 0.25rem; font-size: 11px; }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        min-height: 0;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 4px;
+        padding: 8px 0 4px;
+      }
+
+      #p2 .banner,
+      #p3 .banner,
+      #p4 .banner,
+      #p5 .banner {
+        margin-top: 8px;
+      }
+
+      .nav-brand {
+        align-self: center;
+      }
+
+      .nav-brand img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .nav-links {
+        position: relative;
+        width: 100%;
+        flex: 0 0 auto;
+        justify-content: flex-start;
+        gap: 0.55rem;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        padding-inline: 8px;
+        scrollbar-width: none;
+        background: linear-gradient(90deg, rgba(23, 23, 23, 0), rgba(23, 23, 23, 0) calc(100% - 20px), rgba(236, 201, 139, 0.12) 100%);
+      }
+
+      .nav-links::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 18px;
+        height: calc(100% - 8px);
+        pointer-events: none;
+        background: linear-gradient(90deg, rgba(23, 23, 23, 0), rgba(236, 201, 139, 0.3));
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container { padding-inline: 16px; }
+      .banner { min-height: 190px; margin-top: 16px; }
+      .grid-2, .grid-3, .grid-analyses { grid-template-columns: 1fr; }
+      .hero-banner { grid-template-columns: 1fr; align-content: end; }
+      .hero-image-slot { height: 320px; }
+      .img-placeholder { height: 260px; }
+      #p1 .home-hero { min-height: 0; padding: 18px 20px 30px; }
+      #p1 .home-hero-content { grid-template-columns: 1fr; gap: 24px; }
+      #p1 .home-hero-photo { height: 300px; }
+      #p1 .home-title { padding-bottom: 0; }
+      #p1 .home-title h1 { font-size: clamp(2.6rem, 12vw, 4.2rem); }
+      #p1 .quote-section { min-height: 260px; }
+      #p1 .about-section { padding: 48px 22px; }
+      #p1 .about-inner { grid-template-columns: 1fr; }
+      #p1 .about-photo { height: 420px; grid-row: 1; }
+      #p1 .legacy-profile-details .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Motion ---- */
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes settle { from { transform: scale(1.06); } to { transform: none; } }
+
+    .js .reveal:not(.is-visible) { opacity: 0; }
+    .reveal.is-visible { animation: rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: var(--d, 0ms); }
+
+    #p1.active .home-title > * { animation: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+    #p1.active .home-title > :nth-child(2) { animation-delay: 120ms; }
+    #p1.active .home-title > :nth-child(3) { animation-delay: 240ms; }
+    #p1.active .home-hero-photo img { animation: settle 1200ms ease backwards; }
+
+    .img-placeholder img { transition: transform 600ms ease; }
+    .analyses-link, .sources-open { transition: background 200ms ease, transform 150ms ease; }
+    .analyses-link:active, .sources-open:active, .activity-open:active { transform: scale(0.98); }
+
+    @media (hover: hover) {
+      .img-placeholder:hover img { transform: scale(1.04); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal:not(.is-visible) { opacity: 1; }
+      .reveal.is-visible, #p1.active .home-title > *, #p1.active .home-hero-photo img { animation: none; }
+      .img-placeholder img { transition: none; }
+      .img-placeholder:hover img { transform: none; }
+    }
+
+/* ---- Page 2: Special Activities (merge into the main <style> block later) ---- */
+        .qa {
+          padding-top: 18px;
+          border-top: 1px dashed var(--line);
+        }
+        .qa h4 {
+          margin: 1.3rem 0 0.35rem;
+          color: #111111;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 1.05rem;
+          font-weight: 400;
+          line-height: 1.35;
+        }
+        .qa h4:first-child { margin-top: 0; }
+        .qa p {
+          margin: 0 0 0.7rem;
+          padding: 0;
+          border-top: 0;
+        }
+        .qa .lens-name {
+          margin: 1.6rem 0 0.2rem;
+          color: #555555;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1.4px;
+          text-transform: uppercase;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .page { animation: none; }
+    }
+    /* ---- Motion v2 ---- */
+    @keyframes word-up { from { transform: translateY(105%); } }
+    @keyframes sheen { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+    @keyframes draw { from { transform: scaleX(0); } }
+    @keyframes modal-out { to { opacity: 0; transform: translateY(10px) scale(0.98); } }
+    @keyframes backdrop-out { to { opacity: 0; } }
+
+    .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: #ecc98b; transform: scaleX(0); transform-origin: left; z-index: 1001; pointer-events: none; will-change: transform; }
+
+    .nav-btn { background-image: linear-gradient(#ecc98b, #ecc98b); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color 180ms ease, background-size 300ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+    .nav-btn:hover, .nav-btn.active { border-bottom-color: transparent; background-size: 100% 2px; }
+
+    .word { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.06em 0.05em 0.1em 0; margin: -0.06em -0.05em -0.1em 0; }
+    .word > span { display: inline-block; }
+    .page.active h1 .word > span { animation: word-up 800ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: calc(120ms + var(--i, 0) * 70ms); }
+    #p1.active .home-title > h1 { animation: none; }
+
+    .banner { position: relative; }
+    .banner > * { position: relative; z-index: 1; }
+    .banner::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(105deg, transparent 35%, rgba(236, 201, 139, 0.3) 50%, transparent 65%); transform: translateX(-100%); }
+    .page.active .banner::after { animation: sheen 1400ms ease 400ms both; }
+
+    .page.active > h2::after { content: ""; display: block; width: 64px; height: 2px; margin-top: 10px; background: #ecc98b; transform-origin: left; animation: draw 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 250ms backwards; }
+
+    .activity-card::after, .sources-launch::after { content: ""; position: absolute; top: -1px; left: -1px; right: -1px; height: 3px; background: #ecc98b; transform: scaleX(0); transform-origin: left; transition: transform 350ms cubic-bezier(0.2, 0.7, 0.2, 1); pointer-events: none; }
+    .activity-card:has(.activity-open:focus-visible)::after, .sources-launch:has(.sources-open:focus-visible)::after { transform: scaleX(1); }
+
+    .lesson-front { overflow: hidden; }
+    .lesson-cover-image { transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+    .analyses-link { transition: background 200ms ease, color 200ms ease, transform 150ms ease; }
+
+    .modal[open] .qa > *, .modal[open] .modal-body.sources > * { animation: rise 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: calc(140ms + var(--n, 0) * 45ms); }
+    .modal.is-closing { animation: modal-out 200ms ease both; }
+    .modal.is-closing::backdrop { animation: backdrop-out 200ms ease both; }
+
+    @media (hover: hover) {
+      .activity-card:hover::after, .sources-launch:hover::after { transform: scaleX(1); }
+      .lesson-flip:hover .lesson-cover-image { transform: scale(1.06); }
+      #p1 .hero-analyses-link:hover { background: #fff; color: #111; }
+      .analyses-link:hover { transform: translateY(-2px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page.active h1 .word > span, .page.active .banner::after, .page.active > h2::after,
+      .modal[open] .qa > *, .modal[open] .modal-body.sources > *, .modal.is-closing, .modal.is-closing::backdrop { animation: none; }
+      .nav-btn, .activity-card::after, .sources-launch::after, .lesson-cover-image { transition: none; }
+      .lesson-flip:hover .lesson-cover-image { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="announcement">My Literary Journey: A Great Books Digital Portfolio</div>
+
+  <!-- Top Navigation -->
+  <nav>
+    <button class="nav-brand" type="button" onclick="showPage('p1', document.querySelector('.nav-btn'))">
+      <img src="images/logo-only.jpg" alt="">
+      <span>HYRUM</span>
+    </button>
+    <ul class="nav-links">
+      <li><button class="nav-btn active" aria-current="page" onclick="showPage('p1', this)">01 // Home / Profile</button></li>
+      <li><button class="nav-btn" onclick="showPage('p2', this)">02 // Analyses</button></li>
+      <li><button class="nav-btn" onclick="showPage('p3', this)">03 // Masterpiece</button></li>
+      <li><button class="nav-btn" onclick="showPage('p4', this)">04 // Learning</button></li>
+      <li><button class="nav-btn" onclick="showPage('p5', this)">05 // Reflection</button></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- PAGE 1: Profile -->
+    <div id="p1" class="page active">
+      <section class="home-section home-hero" aria-label="Portfolio introduction">
+        <div class="home-hero-inner">
+          <div class="home-hero-content">
+            <div class="home-hero-photo">
+              <!-- Replace this embedded SVG placeholder with your photo/GIF, or replace the img with a muted looping video. -->
+              <img src="images/hero-portrait.jpg" alt="Hyrum Rey Briones">
+            </div>
+            <div class="home-title">
+              <h1>HYRUM REY A. BRIONES</h1>
+              <p>My Literary Journey: A Great Books Digital Portfolio</p>
+              <button class="analyses-link hero-analyses-link" type="button" onclick="showPage('p2', document.querySelectorAll('.nav-btn')[1])">View My Analyses</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section quote-section" aria-label="Favorite book quotation">
+        <div class="quote-inner">
+          <div class="book-cover-wrap">
+            <img class="book-cover" src="images/a-marvelous-work-wonder-cover.jpg" alt="Cover of A Marvelous Work and a Wonder">
+            <span class="quote-mark" aria-hidden="true">“</span>
+          </div>
+          <p class="quote-copy">"Therefore, behold, I will proceed to do a marvellous work among this people, even a marvellous work and a wonder: for the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid."</p>
+          <p class="quote-credit">Isaiah 29:14 (KJV)</p>
+        </div>
+      </section>
+
+      <section class="home-section about-section" aria-labelledby="about-me-title">
+        <div class="about-inner">
+          <div class="about-copy">
+            <span class="about-label">STUDENT PROFILE</span>
+            <h2 id="about-me-title">About Me</h2>
+            <p class="about-subtitle">Gamer at heart, bookworm by choice.</p>
+            <p class="about-description">Hi, I’m Hyrum! I like to explore a lot of things, from new games and stories to new ideas, and I’m always curious about how things work.</p>
+
+            <div class="about-items">
+              <div class="about-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5.5c2.8-.9 5.4-.4 8 1.4v12c-2.6-1.8-5.2-2.3-8-1.4z"></path>
+                  <path d="M20 5.5c-2.8-.9-5.4-.4-8 1.4v12c2.6-1.8 5.2-2.3 8-1.4z"></path>
+                </svg>
+                <div>
+                  <h3>Reading Interests</h3>
+                  <p>I like reading drama and regression stories, especially manga, and books that help me improve myself.</p>
+                </div>
+              </div>
+              <div class="about-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4.5h14v15H5z"></path>
+                  <path d="M8 8h8M8 11.5h8M8 15h5"></path>
+                </svg>
+                <div>
+                  <h3>Great Books Expectations</h3>
+                  <p>I expected classics like Romeo and Juliet, but I got Job, so I learned that reading Great Books is a full-time Job.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="analyses-link" type="button" onclick="showPage('p2', document.querySelectorAll('.nav-btn')[1])">View My Analyses</button>
+          </div>
+          <div class="about-photo">
+            <img src="images/about-me.jpg" alt="Hyrum Rey Briones">
+          </div>
+        </div>
+      </section>
+
+      <details class="legacy-profile-details" open>
+        <summary>Additional Portfolio Details</summary>
+        <div class="grid-2">
+          <div class="card">
+            <h2>Student Details</h2>
+            <p><strong>Name:</strong> Hyrum Rey A. Briones</p>
+            <p><strong>Course:</strong> Great Books GEC GB NRt</p>
+            <p><strong>Year & Section:</strong> 4th Year, Graduating</p>
+            <p><strong>Instructor:</strong> Raquel Ballares</p>
+          </div>
+
+          <div class="card">
+            <h2>Brief Personal Introduction</h2>
+            <p>Hi, I’m Hyrum Rey A. Briones, and I like video games and reading. I like to explore new things. In this portfolio, I posted my insights on each story along with my own analysis, to show how I read, think, and learn from the Great Books.</p>
+          </div>
+
+          <div class="card">
+            <h2>Reading Interests & Experiences</h2>
+            <p>I like reading drama and regression stories, especially manga, and books that help me improve myself. I also like watching YouTube videos about world analysis and funny videos, and I enjoy story-driven video games because I like seeing how characters make choices.</p>
+          </div>
+
+          <div class="card">
+            <h2>Great Books Expectations & Learning Goals</h2>
+            <p>When I joined Great Books, I expected familiar classics like Romeo and Juliet. Instead, I found works from many cultures and time periods, like the Book of Job, the Ramayana, the Iliad, and the Tale of Genji. I want to understand more deeply how different literary lenses change the way I read a story, and I want to get better at explaining my ideas with evidence from the text. I plan to apply these lessons by thinking carefully before I judge a story or a person, and by asking why characters make their choices, in school and in life.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Portfolio Objectives</h2>
+          <ul>
+            <li>Analyze major literary masterpieces through clear critical lenses.</li>
+            <li>Present nine group discussion lesson cards and five special activity responses.</li>
+            <li>Connect literature, lived experience, and personal growth through reflection.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- PAGE 2: Literary Analyses -->
+    <div id="p2" class="page">
+      <div class="banner">
+        <h1>PAGE 02 // LITERARY ANALYSES</h1>
+        <p class="quote">“Man for his lord should suffer great disease.” — The Song of Roland (anonymous), laisse 79, trans. C. K. Scott Moncrieff</p>
+      </div>
+
+      <h2>Lessons We Learned (Group Discussion)</h2>
+      <p class="lessons-instruction">Tap a card to see its characters and lessons.</p>
+      <div class="grid-2 grid-analyses lessons-grid">
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 1: Book of Job">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/job.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">Book of Job</span>
+              <span class="lesson-cover-badge">GROUP 1</span>
+              <div class="lesson-cover-caption"><h3>Book of Job</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 1</span>
+          <h3>Book of Job</h3>
+          <p class="who"><strong>Main characters:</strong> Job, God, his three friends</p>
+          <p class="who"><strong>Antagonist:</strong> The Accuser (Satan)</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Job lost his wealth, children, and health, and his friends said he must have sinned. <strong>Suffering is not always a punishment.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>Job kept his faith even when his wife told him to curse God. <strong>True faith does not depend on blessings.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 2: Panchatantra">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/panchatantra.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">Panchatantra</span>
+              <span class="lesson-cover-badge">GROUP 2</span>
+              <div class="lesson-cover-caption"><h3>Panchatantra</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 2</span>
+          <h3>Panchatantra</h3>
+          <p class="who"><strong>Main characters:</strong> Raktamukha (monkey), Karalamukha (crocodile), the Brahmin’s wife, the mongoose</p>
+          <p class="who"><strong>Antagonist:</strong> Karalamukha</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>The monkey tricked the crocodile by saying he left his heart on the tree. <strong>Staying calm and thinking fast can save us.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>The Brahmin’s wife killed the mongoose, then found it had saved her baby. <strong>Don’t act on assumptions.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 3: The Ramayana">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/ramayana.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">The Ramayana</span>
+              <span class="lesson-cover-badge">GROUP 3</span>
+              <div class="lesson-cover-caption"><h3>The Ramayana</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 3</span>
+          <h3>The Ramayana</h3>
+          <p class="who"><strong>Main characters:</strong> Rama, Sita, Lakshmana, Hanuman</p>
+          <p class="who"><strong>Antagonist:</strong> Ravana</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Rama accepted exile to keep his father’s promise. <strong>Duty often requires personal sacrifice.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>Ravana kidnapped Sita and was defeated by Rama. <strong>Pride and abuse of power lead to downfall.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 4: The Mahabharata">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/mahabharata.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">The Mahabharata</span>
+              <span class="lesson-cover-badge">GROUP 4</span>
+              <div class="lesson-cover-caption"><h3>The Mahabharata</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 4</span>
+          <h3>The Mahabharata</h3>
+          <p class="who"><strong>Main characters:</strong> Pandavas (Yudhishthira, Arjuna), Krishna, Draupadi, Karna</p>
+          <p class="who"><strong>Antagonist:</strong> Duryodhana</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Arjuna doubted fighting his own relatives, and Krishna taught him about duty. <strong>Dharma is rarely black and white.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>The Pandavas won the war but lost almost all their loved ones. <strong>Greed and revenge cost everyone.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 5: The Iliad">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/iliad.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">The Iliad</span>
+              <span class="lesson-cover-badge">GROUP 5</span>
+              <div class="lesson-cover-caption"><h3>The Iliad</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 5</span>
+          <h3>The Iliad</h3>
+          <p class="who"><strong>Main characters:</strong> Achilles, Agamemnon, Hector, Patroclus</p>
+          <p class="who"><strong>Antagonist:</strong> Agamemnon (and Hector on the battlefield)</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Agamemnon took Achilles’ prize, so Achilles refused to fight, and Patroclus died in his place. <strong>Uncontrolled anger and pride hurt the people we care about.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>Achilles and Priam wept together and Hector’s body was returned. <strong>Compassion can come even after great loss.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 6: The Odyssey">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/odyssey.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">The Odyssey</span>
+              <span class="lesson-cover-badge">GROUP 6</span>
+              <div class="lesson-cover-caption"><h3>The Odyssey</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 6</span>
+          <h3>The Odyssey</h3>
+          <p class="who"><strong>Main characters:</strong> Odysseus, Penelope, Telemachus</p>
+          <p class="who"><strong>Antagonist:</strong> Poseidon (and the suitors)</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Odysseus escaped the Cyclops and won back his home using his wits. <strong>Intelligence and patience matter more than force.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>Penelope stayed faithful and Telemachus stood by his father. <strong>Loyalty to family and hospitality are important.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 7: The Song of Roland">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/song-of-roland.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">The Song of Roland</span>
+              <span class="lesson-cover-badge">GROUP 7</span>
+              <div class="lesson-cover-caption"><h3>The Song of Roland</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 7</span>
+          <h3>The Song of Roland</h3>
+          <p class="who"><strong>Main characters:</strong> Roland, Oliver, Charlemagne, Ganelon</p>
+          <p class="who"><strong>Antagonist:</strong> Ganelon (and King Marsile)</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Roland refused to blow his horn for help because of pride, and his whole rearguard was wiped out. <strong>Pride can cause avoidable tragedy.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>Ganelon betrayed the Franks out of personal revenge and was executed for treason. <strong>Personal grudges should not override loyalty and duty.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 8: The Tale of Genji">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/tale-of-genji.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">The Tale of Genji</span>
+              <span class="lesson-cover-badge">GROUP 8</span>
+              <div class="lesson-cover-caption"><h3>The Tale of Genji</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 8</span>
+          <h3>The Tale of Genji</h3>
+          <p class="who"><strong>Main characters:</strong> Hikaru Genji, Murasaki, Fujitsubo</p>
+          <p class="who"><strong>Antagonist:</strong> No single villain (court rank, jealousy, impermanence)</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>Genji’s youth, beauty, and relationships all faded. <strong>Life and beauty are impermanent.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>Genji’s relationships brought pain to the women he loved. <strong>Power and status should not be used to harm others.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="lesson-flip" role="button" tabindex="0" aria-pressed="false" aria-label="GROUP 9: Psalm 91">
+          <div class="lesson-flip-inner">
+            <div class="lesson-face lesson-front" aria-hidden="false">
+              <img class="lesson-cover-image" src="images/covers/psalm-91.jpg" alt="" onerror="this.hidden = true; this.parentElement.classList.add('cover-missing')">
+              <span class="lesson-cover-fallback" aria-hidden="true">Psalm 91</span>
+              <span class="lesson-cover-badge">GROUP 9</span>
+              <div class="lesson-cover-caption"><h3>Psalm 91</h3><span class="lesson-cover-hint">Tap to flip</span></div>
+            </div>
+        <div class="card lesson-card lesson-face lesson-back" aria-hidden="true">
+          <span class="badge">GROUP 9</span>
+          <h3>Psalm 91</h3>
+          <p class="who"><strong>Main characters:</strong> The psalmist (the faithful believer) and God, the Most High</p>
+          <p class="who"><strong>Antagonist:</strong> No single villain. The dangers are the fowler’s snare, pestilence, the terror of the night, and enemies.</p>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 1</p>
+            <p>The psalm describes God as a refuge and fortress who shelters those who trust in Him, even in the middle of plague, danger, and fear. <strong>Trusting in God brings security and peace.</strong></p>
+          </div>
+          <div class="lesson">
+            <p class="lesson-label">Lesson 2</p>
+            <p>The psalm promises that God will answer, protect, and be with the one who calls on Him in trouble. <strong>We are never alone in hardship, and faith gives us courage.</strong></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-alt overall">
+        <h2>Overall Lessons</h2>
+        <ol>
+          <li>Control pride, anger, and impulses, because they can destroy us and the people we love (Iliad, Ramayana, Song of Roland).</li>
+          <li>Stay committed to duty and loyalty, and keep faith even when life is hard and unfair (Book of Job, Psalm 91).</li>
+          <li>Think before acting and use wisdom instead of force or assumptions.</li>
+        </ol>
+      </div>
+
+      <h2>Special Activities</h2>
+      <div class="grid-2 grid-analyses">
+
+        <!-- ACTIVITY 1 -->
+        <div class="card activity-card">
+          <span class="badge">ACTIVITY 1</span>
+          <h3>Flicker, Fade, Gone</h3>
+          <p><em>Question-and-answer response</em></p>
+          <button class="activity-open" type="button" data-modal="modal-act1" aria-haspopup="dialog"><span>READ ACTIVITY RESPONSE</span><span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+
+        <!-- ACTIVITY 2 -->
+        <div class="card activity-card">
+          <span class="badge">ACTIVITY 2</span>
+          <h3>Ang Huling El Bimbo</h3>
+          <p><em>Question-and-answer response</em></p>
+          <button class="activity-open" type="button" data-modal="modal-act2" aria-haspopup="dialog"><span>READ ACTIVITY RESPONSE</span><span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+
+        <!-- ACTIVITY 3 -->
+        <div class="card activity-card">
+          <span class="badge">ACTIVITY 3 · MULTIPLE LENSES</span>
+          <h3>Hope for the Flowers</h3>
+          <p><em>by Trina Paulus</em></p>
+          <p>A literary analysis through ten lenses, followed by a Reader-Response reflection.</p>
+          <button class="activity-open" type="button" data-modal="modal-act3" aria-haspopup="dialog"><span>READ FULL ANALYSIS</span><span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+
+        <!-- ACTIVITY 4 -->
+        <div class="card activity-card">
+          <span class="badge">ACTIVITY 4 · TEXT, CONTEXT, READER</span>
+          <h3>Anna Karenina (Film Analysis)</h3>
+          <p><em>Film directed by Joe Wright, based on the novel by Leo Tolstoy</em></p>
+          <button class="activity-open" type="button" data-modal="modal-act4" aria-haspopup="dialog"><span>READ MOVIE ANALYSIS</span><span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+
+        <!-- ACTIVITY 5 -->
+        <div class="card activity-card">
+          <span class="badge">ACTIVITY 5</span>
+          <h3>Everywhere a Garden</h3>
+          <p><em>A graphic memoir by Maxine Go</em></p>
+          <p>A personal learning about leaving the nest and growing up.</p>
+          <button class="activity-open" type="button" data-modal="modal-act5" aria-haspopup="dialog"><span>READ ACTIVITY RESPONSE</span><span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+
+      </div>
+
+      <section class="sources-launch" aria-labelledby="sources-heading">
+        <div>
+          <h2 id="sources-heading">Sources &amp; Acknowledgments</h2>
+          <p>The texts, quotations, images, and help behind this portfolio.</p>
+        </div>
+        <button class="sources-open" type="button" data-modal="modal-sources" aria-haspopup="dialog">Open sources</button>
+      </section>
+
+      <dialog id="modal-act1" class="modal" aria-labelledby="modal-act1-title">
+        <div class="modal-shell">
+          <div class="modal-head">
+            <div>
+              <span class="modal-kicker">ACTIVITY 1</span>
+              <h2 class="modal-title" id="modal-act1-title">Flicker, Fade, Gone</h2>
+              <p class="modal-sub">Question-and-answer response</p>
+            </div>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="essay qa">
+              <h4>1. Could you relate to the protagonist? Why or why not?</h4>
+              <p>Yes. Sometimes I too feel invisible to other people, and I feel like I don’t belong. I use other mediums, like video games and reading, just to escape reality, so that’s why I relate to this story.</p>
+
+              <h4>2. Why did the boy disappear at the end of the story?</h4>
+              <p>Maybe he realized that his crush didn’t notice him and left because of that, or because people only saw him as a key for the arcade. Rather than being remembered as a person, he was remembered as the “key” guy.</p>
+
+              <h4>3. Did the ending surprise you? Why or why not?</h4>
+              <p>Yes. There was no mention of what happened to him. He just disappeared, and people did not see him; they just saw him like a background character, which is frustrating. He did not have any development in his life.</p>
+
+              <h4>4. What does the story seem to say about the difference between living and existing?</h4>
+              <p>Living means you are involved in something, having a purpose and having an impact on others, while existing is just having a routine, like being on airplane mode and just breathing air.</p>
+
+              <h4>5. Why did the boy end up the way he did?</h4>
+              <p>He ends up the way he is because of video games. He is engrossed in the game. Instead of living, he is close to just existing. He uses video games to escape reality instead of facing the real world.</p>
+
+              <h4>6. There are two central symbols in the story. What are they? What do they mean?</h4>
+              <p><strong>Key:</strong> it represents the power to open one’s door and his identity as a key holder.</p>
+              <p><strong>Mirror:</strong> his desire to disappear from reality, and to fade into the world that he wants.</p>
+
+              <h4>7. What is a Toadstool? What does the code name “Princess Toadstool” allude to?</h4>
+              <p>A toadstool is a kind of mushroom. When we say “Toadstool,” it is the princess from Super Mario, the character who needs saving, and in his case, it is his crush.</p>
+
+              <h4>8. Explain the significance of the title.</h4>
+              <p><strong>Flicker:</strong> struggling to make a decision.</p>
+              <p><strong>Fade:</strong> slowly losing his connection to the real world.</p>
+              <p><strong>Gone:</strong> his decision to disappear into his game.</p>
+
+              <h4>9. Does the boy in the story remind you of anyone? Does it seem to be a commentary on certain kinds of people?</h4>
+              <p>Yes, the boy reminds me of people who struggle to connect with other people, people who are only social in video games and seem comfortable only there all the time. This makes them want to completely withdraw from reality.</p>
+
+              <h4>10. Princess Toadstool does not fall in love with the narrator. What does this tell us about the difference between fantasy and reality?</h4>
+              <p>In the story, fantasy makes your world easy, with no problem. You can be the hero and save princesses. In reality, not everything is like that; if you want to be rewarded, you have to put work into it. That’s reality.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="modal-act2" class="modal" aria-labelledby="modal-act2-title">
+        <div class="modal-shell">
+          <div class="modal-head">
+            <div>
+              <span class="modal-kicker">ACTIVITY 2</span>
+              <h2 class="modal-title" id="modal-act2-title">Ang Huling El Bimbo</h2>
+              <p class="modal-sub">Question-and-answer response</p>
+            </div>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="essay qa">
+              <h4>1. How does the friendship of Joy, Hector, Emman, and Anthony change from their college years to their adulthood?</h4>
+              <p>From the time Joy was assaulted, the three men abandoned her, leaving her feeling alone. Even if Joy calls for them, they flat-out refuse to even listen to her. It’s sad to see that they changed for the worse.</p>
+
+              <h4>2. What is the significance of the title <em>Ang Huling El Bimbo</em>?</h4>
+              <p>I think the word “bimbo” is like a word for “fool.” It is like “the last fool,” or one of the other terms I hear, “the last whore,” so the title kind of describes the musical.</p>
+
+              <h4>3. How does the musical portray the role of society in shaping a person’s choices and identity?</h4>
+              <p>In the play, it shows that the poor have it rough. In Joy’s situation, she was already struggling. She was assaulted, driven to poverty and drugs, and was a case for a hit-and-run. In her story, she was used by people for their own benefit, like the man who became a konsehal, while her friends grew up in a good environment. Joy was already struggling.</p>
+
+              <h4>4. If you were one of Joy’s three friends, what would you have done differently after the tragic incident?</h4>
+              <p>I would stand by her and help her against the assaulters who attacked her. I know that in the 1990s things were different, but I would still ask for help by calling the authorities. In the play, her friends kind of abandoned her. If Joy needed someone to talk to, I would talk to her. Maybe by talking to her, I could somehow help her change the way she does things and stop what she is doing. That’s what I would do.</p>
+
+              <h4>5. What is the most important lesson that the play <em>Ang Huling El Bimbo</em> teaches about friendship, responsibility, and making choices?</h4>
+              <p>In <em>Ang Huling El Bimbo</em>, the main character was passive throughout the play. As I mentioned, she was assaulted and driven to poverty. She did not choose to change. She kept following the guy who told her to sell herself and sell drugs. I think she should have chosen differently. Her friends should have helped her and comforted her, but they did not take responsibility and kept it to themselves. I think the biggest lessons are to make the right choices and choose your friends well, and don’t go out at night so that nothing will happen.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="modal-act3" class="modal" aria-labelledby="modal-act3-title">
+        <div class="modal-shell">
+          <div class="modal-head">
+            <div>
+              <span class="modal-kicker">ACTIVITY 3 · MULTIPLE LENSES</span>
+              <h2 class="modal-title" id="modal-act3-title">Hope for the Flowers</h2>
+              <p class="modal-sub">by Trina Paulus</p>
+            </div>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="essay qa">
+              <h4>Literary device: Symbolism / Allegory</h4>
+              <p>Every character stands for something outside the story. The pillar of caterpillars is the rat race: status, competition, climbing over people to get ahead. The cocoon is the risk of doing nothing, of trusting a process you can’t see working. The butterfly is what’s on the other side of that risk: a self that finally has a purpose bigger than “get to the top.”</p>
+
+              <p class="lens-name">Formalist Lens</p>
+              <p><strong>Evidence:</strong> Stripe reaches the top of the pillar and finds nothing there but more pillars, all just as crowded.</p>
+              <p><strong>Explanation:</strong> The story repeats the same image of caterpillars climbing over each other at every pillar, not just Stripe’s. That repetition is what turns “reaching the top” into a letdown instead of a payoff. It’s a pattern doing the work, not a stated moral.</p>
+
+              <p class="lens-name">Archetypal Lens</p>
+              <p><strong>Evidence:</strong> Yellow leaves the pillar, goes into the cocoon, and comes out as a butterfly.</p>
+              <p><strong>Explanation:</strong> This matches the Rebirth archetype directly: something that looks like an ending (disappearing into a cocoon) turns out to be a transformation. Leaving the pillar with no guarantee of what’s next also fits the Quest archetype; she goes without proof it will work.</p>
+
+              <p class="lens-name">Marxist Lens</p>
+              <p><strong>Evidence:</strong> Caterpillars step on and crush each other to get higher on the pillar, competing for a “top” none of them has actually seen.</p>
+              <p><strong>Explanation:</strong> Power here is purely positional; height is the only currency, and caterpillars get exploited (literally stepped on) by whoever is climbing above them. Nobody on the pillar stops to ask why it exists, which is its own kind of answer to whether the story questions the system or lets it stand unquestioned.</p>
+
+              <p class="lens-name">Psychoanalytic Lens</p>
+              <p><strong>Evidence:</strong> Stripe keeps climbing even after he starts to care about Yellow, caught between staying with her and going back to the pillar.</p>
+              <p><strong>Explanation:</strong> His climbing looks driven more by fear of falling behind than by any desire he could actually name, which is what the lens asks you to look for. The pull between competing and staying with Yellow reads as a conflict between the id, the drive to win, and a more reflective, relationship-focused part of him.</p>
+
+              <p class="lens-name">Ecocritical Lens</p>
+              <p><strong>Evidence:</strong> As caterpillars, Stripe and Yellow eat leaves to survive. As butterflies, they pollinate flowers.</p>
+              <p><strong>Explanation:</strong> This shows nature as a living system rather than a resource; the diet switch moves the characters from taking from the environment to sustaining it. The story doesn’t explain this shift; it just shows it and lets the contrast make the point.</p>
+
+              <p class="lens-name">Postcolonial Lens</p>
+              <p>Everyone on the pillar has accepted the same idea of what counts as “making it”: getting higher than everyone else. Nobody questions where that idea came from or why climbing is the only path anyone considers. The Old Caterpillar, who knows about cocoons, gets ignored by caterpillars still climbing. This is what happens when one way of seeing things is treated as the only legitimate one: other knowledge gets pushed to the side until someone is forced to take it seriously.</p>
+
+              <p class="lens-name">Queer Lens</p>
+              <p>Climbing is treated as the default. It’s just what caterpillars do, and no one questions it. The caterpillars who step away from the pillar and go into a cocoon are doing something the rest of the crowd doesn’t understand and probably judges. Read this way, “becoming something better” isn’t really about self-improvement. It’s about what happens when you opt out of the one path everyone else has agreed is normal.</p>
+
+              <p class="lens-name">Structuralist Lens</p>
+              <p>The whole story runs on a set of opposites: up vs. down, climbing vs. resting, crowd vs. alone, known vs. unknown. “Becoming something better” only means anything because it’s set against staying the same on the pillar. Take away the opposition and the pillar isn’t even a bad place; it’s just a place. The story needs both sides to make either one mean anything.</p>
+
+              <p class="lens-name">Feminist Lens</p>
+              <p>It’s Yellow who steps off the pillar first and goes into the cocoon without proof it will work. Stripe needs to see her come back changed before he will try it himself. If you read Stripe as coded male and Yellow as coded female, the story hands the harder, riskier move to the female character and makes the male character the one who needs convincing, which runs against the usual pattern where a male character leads and a female character follows.</p>
+
+              <p class="lens-name">Biographical Lens</p>
+              <p><strong>Evidence:</strong> Trina Paulus (born 1931) was raised a practicing Catholic in Cleveland, Ohio. In 1949 she gave up two college scholarships to live at Grailville, a farm community where lay women lived, worked, and prayed together. She later joined an international Grail team in Egypt, was evacuated during the 1967 Six-Day War, and lived in Paris during the revolutionary mood of 1968. Before returning to the United States in 1969, she found “Hope,” an earlier book she had written for the Grail movement, and revised it after what she had seen in Egypt and Paris. It was published as <em>Hope for the Flowers</em> in 1972.</p>
+              <p><strong>Explanation:</strong> Her own life follows the same pattern as the story. Paulus stepped away from the expected path, giving up scholarships for a life built around purpose and community, much like Yellow leaving the pillar. Read this way, the book’s criticism of the crowded climb to the top makes more sense, because the story was reworked after she saw poverty and social upheaval firsthand. Her Catholic faith also fits the idea of something that looks like an ending (the cocoon) becoming new life. Her later work to protect monarch butterflies shows that the butterfly was personal to her and not only a symbol.</p>
+
+              <p class="lens-name">Personal Reflection (Reader-Response Lens)</p>
+              <p>Using the Reader-Response lens, this story lines up with something I’ve dealt with for a long time. I’m the only boy in my family, and growing up I had a cousin I always looked up to. I copied what he did, even the sports he liked, even though I was never as good at them as he was. As I got older, that turned into comparing myself to other people in general. I’d study hard just to get a good grade, mainly to get that validation, not because I actually cared about what I was learning. Because of that, trying new things has always been hard for me. I usually only do something once I see other people already doing it, which is basically what Stripe does on the pillar. He keeps climbing because everyone else is climbing, not because he has checked if it’s actually worth it. Yellow going into the cocoon without knowing what would happen on the other side is the part I have the hardest time relating to, because I don’t think I’ve ever done something without making sure other people were doing it first.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="modal-act4" class="modal" aria-labelledby="modal-act4-title">
+        <div class="modal-shell">
+          <div class="modal-head">
+            <div>
+              <span class="modal-kicker">ACTIVITY 4 · TEXT, CONTEXT, READER</span>
+              <h2 class="modal-title" id="modal-act4-title">Anna Karenina (Film Analysis)</h2>
+              <p class="modal-sub">Film directed by Joe Wright, based on the novel by Leo Tolstoy</p>
+            </div>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="essay qa">
+              <h4>1. While watching, look closely at words, structure, imagery, symbolism, and patterns.</h4>
+              <p>Joe Wright stages much of the film inside a theater, showing that Russian high society is a performance where everyone plays a role and is watched and judged. Recurring symbols like the train, which marks Anna’s first meeting with Vronsky and her death, and the officials stamping papers show how modern life and rigid rules crush individuals who step outside the script.</p>
+
+              <h4>2. Connect the movie to history, culture, and society according to the settings of the film.</h4>
+              <p>Set in 1870s Imperial Russia, the film shows an aristocracy clinging to strict rules of reputation, marriage, and religion while railways and modern change arrive. Society forgives Stiva’s affair but shuns Anna for hers, exposing a gender double standard in which women had little legal or social independence, and divorce was almost impossible.</p>
+
+              <h4>3. Find the significance of the story to the present contemporary life of the people around the world.</h4>
+              <p>Anna’s public shaming resembles today’s social media pile-ons and cancel culture, and women are still judged more harshly than men for the same behavior. Her story also speaks to people around the world who feel trapped in marriages or roles they cannot easily leave, and who struggle to stay authentic in a society that rewards image over honesty.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="modal-act5" class="modal" aria-labelledby="modal-act5-title">
+        <div class="modal-shell">
+          <div class="modal-head">
+            <div>
+              <span class="modal-kicker">ACTIVITY 5</span>
+              <h2 class="modal-title" id="modal-act5-title">Everywhere a Garden</h2>
+              <p class="modal-sub">A graphic memoir by Maxine Go</p>
+            </div>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="essay qa">
+              <p>Reading <em>Everywhere a Garden</em> made me think about the part of growing up that nobody can predict: the moment you leave home. In the prologue, Maxine Go’s father tells her what a fortune teller once said, that the youngest child would be the first to leave the nest. When it starts to come true, her parents wonder where she will go, whether she will come back, and whether she will know how to manage on her own. I recognized that mix of excitement and fear because I feel it too.</p>
+              <p>I also want to leave the nest and be my own person. For example, I want to go to places in foreign countries, try jumping out of a plane, and ride a sports car and race with it. At the same time, I am afraid that I am not ready. In my <em>Hope for the Flowers</em> reflection, I wrote that I usually try something only after I see other people already doing it. Leaving the nest means doing something without that proof, and that is the hardest part for me.</p>
+              <p>I also thought about my parents’ hopes for me. In the story, the father relies on a fortune teller’s words about his children’s future. I don’t want my future to depend on pamahiin or on what someone says will happen. I want to meet my parents’ expectations through results: finishing my studies, working hard, and showing that I can take care of myself. A prediction can say that I will leave, but only my effort can show that I am ready.</p>
+              <p>This story taught me that leaving the nest is not only about going away. It is also about proving, through what I do, that the trust my parents have in me is worth it. For now, I plan to finish my school to prepare for the real world.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="modal-sources" class="modal" aria-labelledby="modal-sources-title">
+        <div class="modal-shell">
+          <div class="modal-head">
+            <div>
+              <span class="modal-kicker">PAGE 2</span>
+              <h2 class="modal-title" id="modal-sources-title">Sources &amp; Acknowledgments</h2>
+            </div>
+            <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+          <div class="modal-body sources">
+            <h3>Primary Texts</h3>
+            <ul>
+              <li>The Book of Job and Psalm 91, King James Version.</li>
+              <li>The Panchatantra, translation as provided in class reading materials.</li>
+              <li>The Ramayana and The Mahabharata, translation as provided in class reading materials.</li>
+              <li>Homer, The Iliad and The Odyssey, translation as provided in class reading materials.</li>
+              <li>The Song of Roland, trans. C. K. Scott Moncrieff, and trans. Dorothy L. Sayers (Penguin Classics, 1957).</li>
+              <li>Murasaki Shikibu, The Tale of Genji, translation as provided in class reading materials.</li>
+              <li>Trina Paulus, Hope for the Flowers, 1972.</li>
+              <li>Maxine Go, Everywhere a Garden (graphic memoir).</li>
+              <li>Joe Wright (dir.), Anna Karenina, based on the novel by Leo Tolstoy.</li>
+              <li>Carljoe Javier, Flicker, Fade, Gone, from the short story collection Geekology (2008).</li>
+              <li>Dingdong Novenario, Ang Huling El Bimbo (musical), Full House Theater Company, watched on YouTube.</li>
+            </ul>
+
+            <h3>Class Materials</h3>
+            <p>Great Books GEC GB NRt, taught by Raquel Ballares: lectures, group discussions, and the critical lenses framework used in the analyses.</p>
+
+            <h3>Quotations</h3>
+            <p>The quotation on the home page is from Isaiah 29:14, King James Version. The quotation on Page 2 is from The Song of Roland, laisse 79, trans. C. K. Scott Moncrieff. The quotation on Page 3 is from The Song of Roland, laisse 87, trans. Dorothy L. Sayers. The biographical details in the Hope for the Flowers analysis come from the Jersey Catholic article “A deep Catholic faith lies behind the 1970’s allegory ‘Hope for the Flowers’.”</p>
+
+            <h3>Images</h3>
+            <p>Book cover images in the Lessons We Learned section: book covers found online, each belonging to its publisher and used here for educational purposes. Page 3 image: The Song of Roland, manuscript illustration found online. Profile photos: my own.</p>
+
+            <h3>Assistance Received</h3>
+            <p>Small group discussions with my classmates, and help from Gemini in understanding the stories. I also used Claude and GitHub Copilot to edit the wording of some written responses and to make changes to this website’s code. The ideas and experiences in the reflections are my own.</p>
+          </div>
+        </div>
+      </dialog>
+    </div>
+
+    <!-- PAGE 3: Favorite Masterpiece -->
+    <div id="p3" class="page">
+      <div class="banner">
+        <h1>PAGE 03 // MY FAVORITE MASTERPIECE</h1>
+        <p class="quote">“Roland is fierce and Oliver is wise.” — The Song of Roland (anonymous), laisse 87, trans. Dorothy L. Sayers</p>
+      </div>
+
+      <div class="img-placeholder">
+        <img src="images/songofroland.jpg" alt="Medieval illustration of an armored knight kneeling beside a fallen knight on a hillside">
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>The Song of Roland</h2>
+        <p><em>Created by an anonymous Old French poet, c. 1040–1115</em></p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Overview & Historical Context</h3>
+          <p>The Song of Roland is an anonymous Old French epic of about 4,000 lines and the oldest surviving major work of French literature. It grew out of a real event: on 15 August 778, Basque fighters ambushed the rearguard of Charlemagne’s army at the Pass of Roncevaux as it withdrew from a failed campaign in Spain, and the chronicler Einhard names Roland, a minor frontier commander, among the dead. Minstrels retold the defeat for about three centuries, and by the time the poem took its surviving form, Europe was caught up in the Reconquista and the First Crusade. The poem reflects that climate: the Basque raiders become a vast Saracen army, Roland becomes Charlemagne’s nephew and greatest knight, and the story becomes a model of knighthood, loyalty, and holy war.</p>
+        </div>
+        <div class="card">
+          <h3>Personal Rationale</h3>
+          <p>Of all the works we studied, The Song of Roland stayed with me most because of Roland’s loyalty. He is brave, he is a true friend to Oliver, and when Charlemagne puts him in command of the rearguard, he accepts the post without hesitation. At that moment I thought about myself and how I can improve to become a leader who is willing to take risks. The Iliad and the Odyssey are grand epics, but this poem is the one that made me look at my own leadership, and that is why I like it more.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h3>Themes, Symbolism & Artistic Impact</h3>
+        <p>The poem is built on pride against prudence, with Roland’s refusal to blow the Olifant until it is too late as the turning point, and on loyalty against treason, with Ganelon placing a private grudge above his oath. Objects carry meaning: the Olifant is the call for help that pride delays, and Durendal is the honor Roland will not let a pagan hold. His death under a pine tree, facing Spain with his glove raised to God, shows a warrior dying as a vassal of both his lord and his God. Its lasting impact comes from survival: carried from oral song to manuscript, print, and translation, the poem endures less for historical accuracy than for its human conflicts of pride, friendship, sacrifice, and grief.</p>
+      </div>
+
+      <div class="card">
+        <h3>Personal Connections & Realizations</h3>
+        <p>There was a time when my leader tested me by trusting me to lead my district. We had to reach a certain number of key indicators, and I was confused about where to start. I listened carefully and followed his advice: empathize with my team, listen to them and not only speak, and be a doer, not just a sayer, backing up everything I say with action. When I read the poem, it was a eureka moment, because Roland stands by his words with his actions, staying at his post and fighting to the end. Reading it helped me realize that a leader earns trust by taking risks and acting, not just by giving orders. From now on, I will keep listening to my team and make sure my actions back up my words.</p>
+      </div>
+    </div>
+
+    <!-- PAGE 4: Summary of Learning -->
+    <div id="p4" class="page">
+      <div class="banner">
+        <h1>PAGE 04 // SUMMARY OF LEARNING</h1>
+      </div>
+
+      <div class="learning-editorial-grid">
+        <article class="card learning-entry learning-entry--lead">
+          <span class="learning-entry-number" aria-hidden="true">01</span>
+          <h2>Masterpieces Across Periods & Cultures</h2>
+          <p>From India, the Panchatantra, the Ramayana, and the Mahabharata taught me about personal growth. Their stories talk about duty, staying calm in difficult situations, and not acting on greed. From them I learned to think before I act, to avoid acting on impulse, and to stay calm when things get hard. They made me want to become a better person.</p>
+          <img class="learning-botanical" src="images/designs/botanical1.svg" alt="" aria-hidden="true">
+        </article>
+        <article class="card-alt learning-entry learning-entry--dark">
+          <span class="learning-entry-number" aria-hidden="true">02</span>
+          <h2>Literary Lenses & Approaches</h2>
+          <p>The critical lenses changed how I read. Before, I read stories only because they were required, and I did not know what to look for. The historical lens showed me that some stories carry meaning, and some help people realize mistakes made in the past. That helped me start reading and made me want to keep going with other stories. The Marxist lens showed me how people in power act and how people with less get by in their own way. It helped me empathize with people in need and see how they survived, and it opened my eyes to the fact that life is not always fair. Now I read to understand what a story is saying, not just to finish it.</p>
+        </article>
+        <article class="card learning-entry learning-entry--compact">
+          <span class="learning-entry-number" aria-hidden="true">03</span>
+          <h2>Human Experience & Society</h2>
+          <p>The works reflect human experience through duty, fear of loss, pride, and other emotions that appear in every story. In Anna Karenina, Anna leaves her children and is consumed by guilt, and she regrets it. In The Tale of Genji, Genji’s youth, beauty, and relationships all fade, which shows that life and beauty are impermanent. These stories show that the same feelings exist in people today. It taught me that people in every time and place go through the same struggles.</p>
+        </article>
+        <article class="card learning-entry learning-entry--close">
+          <span class="learning-entry-number" aria-hidden="true">04</span>
+          <h2>Critical Thinking & Interpretation</h2>
+          <p>My critical thinking improved when I started putting myself inside the story and asking what I would do if I were the main character. That also helps me think about what I should do in real life. At the start, I would just read a story and look for the plot, and that was all. Writing the Hope for the Flowers analysis taught me to state evidence from the text and then explain what it means. I will use this to think carefully before I judge a story or a person.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- PAGE 5: Personal Reflection -->
+    <div id="p5" class="page">
+      <div class="banner reflection-banner">
+        <h1>PAGE 05 // PERSONAL REFLECTION</h1>
+        <p class="reflection-intro">A journal of what literature has taught me about reading, life, and the person I hope to become.</p>
+      </div>
+
+      <ol class="reflection-timeline">
+        <li class="reflection-entry">
+          <span class="reflection-marker" aria-hidden="true">01</span>
+          <div class="reflection-content">
+            <h2 class="reflection-question"><span class="reflection-question-prefix">1. </span>How has your understanding and appreciation of literature changed throughout the course?</h2>
+            <p class="reflection-answer">This semester has been a journey. The reading took a lot of time, but it was an amazing experience. It helped me develop my critical thinking and use better words when I speak and write. The lenses helped me the most, because they gave me different ways of looking at the same story.</p>
+          </div>
+        </li>
+        <li class="reflection-entry">
+          <span class="reflection-marker" aria-hidden="true">02</span>
+          <div class="reflection-content">
+            <h2 class="reflection-question"><span class="reflection-question-prefix">2. </span>What challenges did you encounter when reading and analyzing literary masterpieces, and how did you overcome them?</h2>
+            <p class="reflection-answer">One challenge was reading old books. Some translations use old English, and I found them hard to understand. What helped was using other ways into the story. Some of the works have movies, and I used Google and AI tools to understand what each story is trying to say.</p>
+          </div>
+        </li>
+        <li class="reflection-entry">
+          <span class="reflection-marker" aria-hidden="true">03</span>
+          <div class="reflection-content">
+            <h2 class="reflection-question"><span class="reflection-question-prefix">3. </span>Which literary lens or approach influenced your interpretation of literature the most? Why?</h2>
+            <p class="reflection-answer">The lens that stood out most to me is the Structuralist lens. Across the nine stories, such as The Song of Roland and the Iliad, there is always an opposition: an enemy standing in front of the protagonist, or sometimes a battle within oneself. This lens highlights the good and the evil in each story, and with that in mind, the stories became more interesting to read and easier to relate to.</p>
+          </div>
+        </li>
+        <li class="reflection-entry">
+          <span class="reflection-marker" aria-hidden="true">04</span>
+          <div class="reflection-content">
+            <h2 class="reflection-question"><span class="reflection-question-prefix">4. </span>What important realizations about life, society, culture, or human nature have you gained?</h2>
+            <p class="reflection-answer">One story that made a big impact on me is the story of Job. Job lived faithfully and honestly, and it seems he should have lived happily. Yet he was tested on how strong his faith was. He did not lose his faith, and in the end he was rewarded double. This matters to me because I sometimes ask why bad things happen to good people. Job showed me that hardship can be a test of faith, and that I should keep doing good and be an example to others. Job is my great example of patience, because despite being burdened by many illnesses, he still trusted God.</p>
+          </div>
+        </li>
+        <li class="reflection-entry reflection-entry--closing">
+          <span class="reflection-marker" aria-hidden="true">05</span>
+          <div class="reflection-content">
+            <h2 class="reflection-question"><span class="reflection-question-prefix">5. </span>How can you apply the lessons and values learned from Great Books in your personal, academic, or future professional life?</h2>
+            <p class="reflection-answer">The lessons in each book show human experience, and they inspire readers to feel something and to picture the kind of person they want to be. For me, the values in these books have touched my heart and helped me become a better person. I look at the characters as ideals and try to copy their best traits. I will apply these traits in my daily life.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="reflection-endmark"><span class="reflection-endmark-ornament" aria-hidden="true"></span><span class="reflection-endmark-label">End of Reflection</span></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Hyrum Rey A. Briones • My Literary Journey: A Great Books Digital Portfolio</p>
+  </footer>
+
+  <script>
+    function showPage(pageId, element) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(p => p.classList.remove('active'));
+
+      // Deactivate all nav buttons
+      const buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.removeAttribute('aria-current');
+      });
+
+      // Show selected page & activate button
+      document.getElementById(pageId).classList.add('active');
+      element.classList.add('active');
+      element.setAttribute('aria-current', 'page');
+
+      // Scroll smoothly to top
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }
+
+    document.querySelectorAll('#p2 .lesson-flip').forEach(card => {
+      const toggleCard = () => {
+        const flipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-pressed', String(flipped));
+        card.querySelector('.lesson-front').setAttribute('aria-hidden', String(flipped));
+        card.querySelector('.lesson-back').setAttribute('aria-hidden', String(!flipped));
+      };
+
+      card.addEventListener('click', toggleCard);
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleCard();
+        }
+      });
+    });
+
+    function closeModal(dlg) {
+      if (!dlg.open || dlg.classList.contains('is-closing')) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { dlg.close(); return; }
+      let finished = false;
+      const onEnd = e => { if (e.target === dlg) finish(); };
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        dlg.removeEventListener('animationend', onEnd);
+        dlg.classList.remove('is-closing');
+        dlg.close();
+      };
+      dlg.classList.add('is-closing');
+      dlg.addEventListener('animationend', onEnd);
+      setTimeout(finish, 400);
+    }
+
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dlg = document.getElementById(btn.dataset.modal);
+        if (!dlg || typeof dlg.showModal !== 'function') return;
+        dlg.querySelectorAll('.qa > *, .modal-body.sources > *').forEach((el, i) => el.style.setProperty('--n', Math.min(i, 14)));
+        dlg.showModal();
+        const body = dlg.querySelector('.modal-body');
+        if (body) body.scrollTop = 0;
+      });
+    });
+
+    document.querySelectorAll('dialog.modal').forEach(dlg => {
+      dlg.addEventListener('click', e => { if (e.target === dlg) closeModal(dlg); });
+      dlg.addEventListener('cancel', e => { e.preventDefault(); closeModal(dlg); });
+      dlg.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeModal(dlg)));
+    });
+
+    document.documentElement.classList.add('js');
+    const revealTargets = document.querySelectorAll('.page .card:not(.lesson-card), .page .card-alt, .page .lesson-flip, .page .sources-launch, .page .banner');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(el => {
+      el.classList.add('reveal');
+      const index = Array.from(el.parentElement.children).indexOf(el);
+      el.style.setProperty('--d', (index % 4) * 90 + 'ms');
+      revealObserver.observe(el);
+    });
+
+    document.querySelectorAll('#p1 .home-title h1, .banner h1').forEach(h => {
+      const text = h.textContent.trim();
+      h.setAttribute('aria-label', text);
+      h.textContent = '';
+      text.split(/\s+/).forEach((word, i) => {
+        const outer = document.createElement('span');
+        outer.className = 'word';
+        outer.setAttribute('aria-hidden', 'true');
+        const inner = document.createElement('span');
+        inner.textContent = word;
+        inner.style.setProperty('--i', i);
+        outer.appendChild(inner);
+        h.appendChild(outer);
+        h.appendChild(document.createTextNode(' '));
+      });
+    });
+
+    const progressBar = document.querySelector('.scroll-progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    new ResizeObserver(updateProgress).observe(document.body);
+    updateProgress();
+  </script>
+
+</body>
+</html>
